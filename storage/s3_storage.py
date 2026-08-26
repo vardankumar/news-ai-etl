@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 
 
-BUCKET_NAME = "news-ai-etl-raw"
+BUCKET_NAME = "news-ai-etl-project-803958"
 REGION      = "us-east-1"
 
 # S3 client - reads credentials from environment variables automatically
