@@ -6,8 +6,8 @@ load_dotenv()
 
 
 SNOWFLAKE_CONFIG = {
-    "account":   "XBYCFDM-CO68158",
-    "user":      "AYANHUSSAIN",
+    "account":   "ZFTTGSR-XCB83146",
+    "user":      "VERDANKUMAR",
     "password":  os.getenv("SNOWFLAKE_PASSWORD"),
     "warehouse": "NEWS_WH",
     "database":  "NEWS_AI_ETL",
@@ -32,7 +32,7 @@ def get_recent_links(cursor, source):
         SELECT link
         FROM RAW_NEWS
         WHERE source = %s
-        AND TRY_TO_TIMESTAMP(fetched_at) >= DATEADD(hour, -10, CURRENT_TIMESTAMP())
+        AND TRY_TO_TIMESTAMP(fetched_at) >= DATEADD(hour, -24, CURRENT_TIMESTAMP())
     """
 
     cursor.execute(query, (source,))
